@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/sentMoneyFragment">
+
+    <fragment
+        android:id="@+id/sentMoneyFragment"
+        android:name="com.example.paymentappdesign.ui.sentmoney.SentMoneyFragment"
+        android:label="fragment_sent_money"
+        tools:layout="@layout/fragment_sent_money" />
+    <fragment
+        android:id="@+id/sendMoneyFragment"
+        android:name="com.example.paymentappdesign.ui.sendmoney.SendMoneyFragment"
+        android:label="fragment_send_money"
+        tools:layout="@layout/fragment_send_money" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.paymentappdesign.ui.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.example.paymentappdesign.ui.report.ReportFragment"
+        android:label="fragment_report"
+        tools:layout="@layout/fragment_report" />
+    <fragment
+        android:id="@+id/walletFragment"
+        android:name="com.example.paymentappdesign.ui.wallet.WalletFragment"
+        android:label="fragment_wallet"
+        tools:layout="@layout/fragment_wallet" />
+</navigation>

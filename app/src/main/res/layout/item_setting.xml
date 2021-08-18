@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="setting"
+            type="com.example.paymentappdesign.data.Settings" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_10sdp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSetting"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_32ssp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/ic_information"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSettingName"
+                style="@style/Sarabun14Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_22sdp"
+                android:layout_marginBottom="@dimen/_24sdp"
+                android:gravity="center_horizontal"
+                android:textColor="@color/color_text_setting_title"
+                tools:text="Profile Information" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

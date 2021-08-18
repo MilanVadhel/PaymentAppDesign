@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="purple">#613EEA</color>
+    <color name="light_gray">#D6D9E4</color>
+    <color name="transparent">#00000000</color>
+    <color name="extra_light_gray">#F0F1F4</color>
+    <color name="extra_dark_gray">#E5E5E5</color>
+    <color name="pink_negative">#FA2E69</color>
+    <color name="green_positive">#10C971</color>
+
+    <color name="circle_stroke">#ECECFB</color>
+    <color name="color_notification">#54D3AD</color>
+
+    <!--Text Colors-->
+    <color name="color_normal_text">#3B414B</color>
+    <color name="color_normal_text_gray">#A6AAB4</color>
+    <color name="color_normal_text_dark_gray">#A6AAB4</color>
+    <color name="color_normal_text_white">#70FFFFFF</color>
+    <color name="color_text_white">@color/white</color>
+    <color name="color_text_light_gray">@color/light_gray</color>
+    <color name="color_text_black">@color/black</color>
+    <color name="color_text_pink_negative">@color/pink_negative</color>
+    <color name="color_text_balance">@color/white</color>
+    <color name="color_tab_indicator_orange">#FF7D00</color>
+    <color name="color_text_setting_title">@color/white</color>
+
+    <!--Line colors-->
+    <color name="color_line_light_gray">#E8E9EC</color>
+
+    <!--Border Colors-->
+    <color name="color_border_white">@color/white</color>
+    <color name="color_border_gray_light">@color/light_gray</color>
+    <color name="color_border_purple">@color/white</color>
+
+    <!--Background Colors-->
+    <color name="color_background_purple">@color/purple</color>
+    <color name="color_background_green_positive">@color/green_positive</color>
+    <color name="color_background_extra_light_gray">@color/extra_light_gray</color>
+    <color name="color_background_extra_dark_gray">@color/extra_dark_gray</color>
+
+    <!--Button Colors-->
+    <color name="color_button_purple">@color/purple</color>
+
+
+</resources>

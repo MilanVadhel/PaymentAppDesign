@@ -1,0 +1,100 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.PaymentAppDesign" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <!-- Customize your theme here. -->
+    </style>
+    
+    <style name="BaseSarabunSemiBold">
+        <item name="android:fontFamily">@font/sarabun_semibold</item>
+    </style>
+
+    <style name="BaseSarabunMedium">
+        <item name="android:fontFamily">@font/sarabun_medium</item>
+    </style>
+
+    <style name="BaseSarabunLight">
+        <item name="android:fontFamily">@font/sarabun_light</item>
+    </style>
+
+    <style name="BaseSarabunRegular">
+        <item name="android:fontFamily">@font/sarabun_regular</item>
+    </style>
+
+    <style name="Sarabun32SemiBold" parent="BaseSarabunSemiBold">
+        <item name="android:textSize">@dimen/_32ssp</item>
+    </style>
+
+    <style name="Sarabun12Medium" parent="BaseSarabunMedium">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="Sarabun12Light" parent="BaseSarabunLight">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="Sarabun12Regular" parent="BaseSarabunRegular">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="Sarabun12SemiBold" parent="BaseSarabunSemiBold">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="Sarabun16SemiBold" parent="BaseSarabunSemiBold">
+        <item name="android:textSize">@dimen/_16ssp</item>
+    </style>
+
+    <style name="Sarabun16Medium" parent="BaseSarabunMedium">
+        <item name="android:textSize">@dimen/_16ssp</item>
+    </style>
+
+    <style name="Sarabun18Medium" parent="BaseSarabunMedium">
+        <item name="android:textSize">@dimen/_18ssp</item>
+    </style>
+
+    <style name="Sarabun14Medium" parent="BaseSarabunMedium">
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="Sarabun20Regular" parent="BaseSarabunRegular">
+        <item name="android:textSize">@dimen/_20ssp</item>
+    </style>
+
+    <style name="TabLayoutTheme" parent="Widget.MaterialComponents.TabLayout">
+       <!-- <item name="tabSelectedTextColor">@color/color_normal_text</item>
+        <item name="tabTextColor">@color/color_normal_text_gray</item>
+        <item name="tabIndicatorColor">@color/color_tab_indicator_orange</item>-->
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="BaseButtonTheme">
+        <item name="android:textColor">@color/color_text_white</item>
+        <item name="android:background">@drawable/shape_button</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:fontFamily">@font/sarabun_semibold</item>
+    </style>
+
+    <style name="BaseInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/color_border_purple</item>
+    </style>
+
+    <style name="BaseTextInputEditText">
+        <item name="android:textColor">@color/color_text_black</item>
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:textColorHint">@color/color_text_light_gray</item>
+        <item name="android:fontFamily">@font/sarabun_regular</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+</resources>

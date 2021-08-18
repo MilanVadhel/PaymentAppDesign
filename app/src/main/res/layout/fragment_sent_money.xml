@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:fadingEdge="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        tools:context=".ui.settings.SettingsFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvYourBalance"
+            style="@style/Sarabun14Medium"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_60sdp"
+            android:text="@string/your_balance"
+            android:textColor="@color/color_normal_text_gray"
+            app:layout_constraintBottom_toTopOf="@id/tvRemainingBalance"
+            app:layout_constraintEnd_toStartOf="@id/flProfilePhoto"
+            app:layout_constraintStart_toStartOf="@id/glStart" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRemainingBalance"
+            style="@style/Sarabun32SemiBold"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:text="@string/balance"
+            android:textColor="@color/color_text_balance"
+            app:layout_constraintEnd_toStartOf="@id/flProfilePhoto"
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/flProfilePhoto"
+            android:layout_width="@dimen/_37sdp"
+            android:layout_height="@dimen/_37sdp"
+            android:background="@drawable/shape_circle_ring"
+            app:layout_constraintBottom_toBottomOf="@id/tvRemainingBalance"
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintTop_toTopOf="@id/tvRemainingBalance" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivProfileImage"
+            android:layout_width="@dimen/_33sdp"
+            android:layout_height="@dimen/_33sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_photo"
+            app:layout_constraintBottom_toBottomOf="@id/flProfilePhoto"
+            app:layout_constraintEnd_toEndOf="@id/flProfilePhoto"
+            app:layout_constraintStart_toStartOf="@id/flProfilePhoto"
+            app:layout_constraintTop_toTopOf="@id/flProfilePhoto" />
+
+        <FrameLayout
+            android:id="@+id/flNotification"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:background="@drawable/shape_notification"
+            app:layout_constraintEnd_toEndOf="@id/flProfilePhoto"
+            app:layout_constraintTop_toTopOf="@id/flProfilePhoto" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpCards"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_174sdp"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:fadingEdge="none"
+            android:paddingHorizontal="@dimen/_35sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRemainingBalance"
+            app:spanCount="2"
+            tools:itemCount="6"
+            tools:listitem="@layout/item_setting" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tblTransactionHistory"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50sdp"
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@+id/vpCards"
+            app:tabIndicatorColor="@color/color_tab_indicator_orange"
+            app:tabSelectedTextColor="@color/color_normal_text"
+            app:tabTextColor="@color/color_normal_text_gray"/>
+
+        <View
+            android:id="@+id/vTabDivider"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/color_line_light_gray"
+            app:layout_constraintEnd_toEndOf="@id/tblTransactionHistory"
+            app:layout_constraintStart_toStartOf="@id/tblTransactionHistory"
+            app:layout_constraintTop_toBottomOf="@id/tblTransactionHistory" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtSearch"
+            style="@style/Sarabun12Medium"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/_32ssp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/shape_button"
+            android:backgroundTint="@color/color_background_extra_light_gray"
+            android:drawableEnd="@drawable/ic_search"
+            android:drawableRight="@drawable/ic_search"
+            android:hint="@string/search_transaction"
+            android:paddingHorizontal="@dimen/_16sdp"
+            android:textColorHint="@color/color_normal_text_gray"
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@id/vTabDivider" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTransactionDues"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:fadingEdge="none"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@id/edtSearch"
+            tools:itemCount="2"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            tools:listitem="@layout/item_transaction_due_time"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/_80sdp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

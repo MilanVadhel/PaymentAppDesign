@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="transactiondue"
+            type="com.example.paymentappdesign.data.TransactionDue" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_24sdp"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTransactionDay"
+            style="@style/Sarabun12Medium"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:includeFontPadding="false"
+            android:text="@{transactiondue.transactionTime}"
+            android:textColor="@color/color_normal_text_dark_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Today" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTransaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/tvTransactionDay"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_transaction" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

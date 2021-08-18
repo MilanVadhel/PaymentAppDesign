@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvCreditCard"
+        android:layout_width="@dimen/_144sdp"
+        android:layout_height="@dimen/_120sdp"
+        app:cardBackgroundColor="@color/color_background_extra_dark_gray"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardElevation="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginLeft="@dimen/_15sdp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:gravity="start"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivVisa"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_visa"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:tint="@color/color_normal_text_gray"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCardNumber"
+                style="@style/Sarabun20Regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/color_normal_text_gray"
+                tools:text="* * * *  3849" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCardBalance"
+                style="@style/Sarabun12Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:textColor="@color/color_normal_text_gray"
+                tools:text="$ 1,345.56"
+                android:layout_marginBottom="@dimen/_8sdp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

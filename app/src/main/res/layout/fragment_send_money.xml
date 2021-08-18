@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fadingEdge="none"
+    android:fillViewport="true"
+    android:overScrollMode="never">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSendMoney"
+            style="@style/Sarabun32SemiBold"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:text="@string/send_money"
+            android:textColor="@color/color_text_balance"
+            app:layout_constraintEnd_toStartOf="@id/flProfilePhoto"
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/flProfilePhoto"
+            android:layout_width="@dimen/_37sdp"
+            android:layout_height="@dimen/_37sdp"
+            android:background="@drawable/shape_circle_ring"
+            app:layout_constraintBottom_toBottomOf="@id/tvSendMoney"
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintTop_toTopOf="@id/tvSendMoney" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivProfileImage"
+            android:layout_width="@dimen/_33sdp"
+            android:layout_height="@dimen/_33sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_photo"
+            app:layout_constraintBottom_toBottomOf="@id/flProfilePhoto"
+            app:layout_constraintEnd_toEndOf="@id/flProfilePhoto"
+            app:layout_constraintStart_toStartOf="@id/flProfilePhoto"
+            app:layout_constraintTop_toTopOf="@id/flProfilePhoto" />
+
+        <FrameLayout
+            android:id="@+id/flNotification"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:background="@drawable/shape_notification"
+            app:layout_constraintEnd_toEndOf="@id/flProfilePhoto"
+            app:layout_constraintTop_toTopOf="@id/flProfilePhoto" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tblSendMoney"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24sdp"
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@+id/tvSendMoney"
+            app:tabIndicatorColor="@color/color_tab_indicator_orange"
+            app:tabSelectedTextColor="@color/color_normal_text"
+            app:tabTextColor="@color/color_normal_text_gray" />
+
+        <View
+            android:id="@+id/vTabDivider"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/color_line_light_gray"
+            app:layout_constraintEnd_toEndOf="@id/tblSendMoney"
+            app:layout_constraintStart_toStartOf="@id/tblSendMoney"
+            app:layout_constraintTop_toBottomOf="@id/tblSendMoney" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSelectCreditCard"
+            style="@style/Sarabun12Medium"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:text="@string/select_credit_card"
+            android:textColor="@color/color_normal_text_dark_gray"
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@+id/vTabDivider" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCreditCards"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:fadingEdge="none"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSelectCreditCard"
+            tools:itemCount="6"
+            tools:listitem="@layout/item_select_credit_card" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRecipient"
+            style="@style/Sarabun12Medium"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:text="@string/recipient"
+            android:textColor="@color/color_normal_text_dark_gray"
+            app:layout_constraintEnd_toStartOf="@id/tvShowAll"
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@+id/rvCreditCards" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvShowAll"
+            style="@style/Sarabun12SemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/show_all"
+            android:textColor="@color/color_background_purple"
+            app:layout_constraintBottom_toBottomOf="@id/tvRecipient"
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintTop_toTopOf="@+id/tvRecipient" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecipients"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:fadingEdge="none"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRecipient"
+            tools:itemCount="6"
+            tools:listitem="@layout/item_recipient" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTransactionDetails"
+            style="@style/Sarabun12Medium"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:text="@string/transaction_details"
+            android:textColor="@color/color_normal_text_dark_gray"
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@+id/rvRecipients" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilAmount"
+            style="@style/BaseInputLayout"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/_56sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@id/tvTransactionDetails"
+            app:startIconDrawable="@drawable/ic_dollar"
+            app:startIconTint="@color/color_text_light_gray">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtAmount"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/amount"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:paddingEnd="@dimen/_120sdp"
+                android:paddingRight="@dimen/_120sdp"
+                tools:ignore="RtlSymmetry" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvChangeCurrency"
+            style="@style/Sarabun12SemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16ssp"
+            android:layout_marginRight="@dimen/_16ssp"
+            android:layout_weight="0"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/_2sdp"
+            android:text="@string/change_currency"
+            android:textColor="@color/color_background_purple"
+            app:layout_constraintBottom_toBottomOf="@id/tilAmount"
+            app:layout_constraintEnd_toEndOf="@id/tilAmount"
+            app:layout_constraintTop_toTopOf="@id/tilAmount" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilDescription"
+            style="@style/BaseInputLayout"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/_56sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:hint="@string/description"
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@id/tilAmount">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtDescription"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnConfirm"
+            style="@style/BaseButtonTheme"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/_56sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginBottom="@dimen/_80sdp"
+            android:text="@string/confirm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@id/tilDescription" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+

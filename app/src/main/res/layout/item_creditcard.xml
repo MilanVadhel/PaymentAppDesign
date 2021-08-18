@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="creditcard"
+            type="com.example.paymentappdesign.data.CreditCard" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_10sdp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:background="@drawable/bg_card_purple">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_20sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_20sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivVisa"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_visa"
+                app:layout_constraintStart_toStartOf="@id/glStart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivMore"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_more"
+                app:layout_constraintEnd_toEndOf="@id/glEnd"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCardnumber"
+                style="@style/Sarabun20Regular"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.05"
+                android:text="@{creditcard.cardNumber}"
+                android:textColor="@color/color_text_white"
+                app:layout_constraintEnd_toEndOf="@id/glEnd"
+                app:layout_constraintStart_toStartOf="@id/glStart"
+                app:layout_constraintTop_toBottomOf="@id/ivVisa"
+                tools:text="****  ****  ****  8014" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCardHolder"
+                style="@style/Sarabun12Light"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:text="@string/card_holder"
+                android:textAllCaps="true"
+                android:textColor="@color/color_text_white"
+                app:layout_constraintEnd_toStartOf="@+id/tvExpires"
+                app:layout_constraintStart_toStartOf="@id/glStart"
+                app:layout_constraintTop_toBottomOf="@id/tvCardnumber" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCardHolderName"
+                style="@style/Sarabun16Medium"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@{creditcard.cardHolderName}"
+                android:textColor="@color/color_text_white"
+                app:layout_constraintEnd_toStartOf="@+id/tvExpires"
+                app:layout_constraintStart_toStartOf="@id/glStart"
+                app:layout_constraintTop_toBottomOf="@id/tvCardHolder"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                android:layout_marginBottom="@dimen/_10sdp"
+                tools:text="Lindsey Johnson" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCardExpiryDate"
+                style="@style/Sarabun16Medium"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="@{creditcard.cardExpiryDate}"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_text_white"
+                app:layout_constraintBottom_toBottomOf="@+id/tvCardHolderName"
+                app:layout_constraintEnd_toEndOf="@+id/glEnd"
+                app:layout_constraintStart_toStartOf="@id/tvExpires"
+                app:layout_constraintTop_toTopOf="@id/tvCardHolderName"
+                tools:text="08/21" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvExpires"
+                style="@style/Sarabun12Light"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@string/expires"
+                android:textAllCaps="true"
+                android:textColor="@color/color_text_white"
+                app:layout_constraintBottom_toBottomOf="@id/tvCardHolder"
+                app:layout_constraintEnd_toEndOf="@id/glEnd"
+                app:layout_constraintTop_toTopOf="@id/tvCardHolder" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
